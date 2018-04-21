@@ -1,25 +1,36 @@
 package example.bean;
 
 public class User {
-    private String user;
+    private int userid;
+    private String username;
     private String password;
-    private String age;
+    private int age;
 
-    public String getUser() {
-        return user;
+    public int getUserid() {
+        return userid;
     }
 
-    public String getAge() {
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+
+        return username;
+    }
+
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public void setUser(String user) {
-        this.user = user;
-    }
 
     public String getPassword() {
         return password;

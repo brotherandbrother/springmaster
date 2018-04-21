@@ -67,4 +67,18 @@ import java.sql.SQLException;
                 System.out.println("数据关闭出错");
             }
         }
+        String getSqlString(String table,String whereClause,String[] whereArgs){
+            StringBuffer stringBuffer=new StringBuffer();
+            stringBuffer.append("select * from ");
+            stringBuffer.append(table);
+            if(whereClause!=null && !"".equals(whereClause)){
+                stringBuffer.append(" where ");
+                stringBuffer.append(whereClause);//一次小错误
+                for(int i=0;i<whereArgs.length;i++){
+                    int q=stringBuffer.indexOf("?");
+                    stringBuffer.replace(q, q+1, whereArgs[i]);
+                }
+            }
+            return stringBuffer.toString();
+        }
     }
